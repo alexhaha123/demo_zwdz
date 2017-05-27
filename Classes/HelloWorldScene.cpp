@@ -30,6 +30,7 @@ bool HelloWorld::init()
     }
     
     Size visibleSize = Director::getInstance()->getVisibleSize();
+    Size winSize = Director::getInstance()->getWinSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
     /////////////////////////////
@@ -74,6 +75,11 @@ bool HelloWorld::init()
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
     
+    //image
+    auto sprite1 = Sprite::create("Hello.png");
+    sprite1->setPosition(Vec2(winSize.width/2, winSize.height/2));
+    CCLOG("winsize.width:%.1f, winSize.height:%.1f", winSize.width, winSize.height);
+    this->addChild(sprite1);
     
     
     return true;
