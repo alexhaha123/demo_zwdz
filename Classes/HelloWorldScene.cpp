@@ -1,4 +1,6 @@
 #include "HelloWorldScene.h"
+#include "GIDFactory.h"
+#include <string>
 
 USING_NS_CC;
 
@@ -48,13 +50,13 @@ bool HelloWorld::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
-    /////////////////////////////
-    // 3. add your codes below...
+    unsigned int gid = GIDFactory::getInstance()->getNextGid();
 
-    // add a label shows "Hello World"
-    // create and initialize a label
+    char s;
+    sprintf(&s, "%d", gid);
+    const std::string str = &s;
     
-    auto label = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 24);
+    auto label = Label::createWithTTF(str, "fonts/Marker Felt.ttf", 24);
     
     // position the label on the center of the screen
     label->setPosition(Vec2(origin.x + visibleSize.width/2,
@@ -73,10 +75,6 @@ bool HelloWorld::init()
     this->addChild(sprite, 0);
     
     
-    ui::ImageView* img = ui::ImageView::create("CloseNormal.png");
-    this->addChild(img);
-    img->setPosition(Vec2(origin.x + img->getContentSize().width/2,
-                          origin.y+img->getContentSize().height/2));
     
     return true;
 }
