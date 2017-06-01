@@ -113,6 +113,7 @@
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3C73E3E31ED96FA80065028F /* GIDFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GIDFactory.cpp; path = battle/tool/GIDFactory.cpp; sourceTree = "<group>"; };
 		3C73E3E41ED96FA80065028F /* GIDFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GIDFactory.h; path = battle/tool/GIDFactory.h; sourceTree = "<group>"; };
+		3CFD98871EE01CA300583175 /* ZWSpine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZWSpine.h; path = ui/spine/ZWSpine.h; sourceTree = "<group>"; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		46880B7719C43A67006E1F66 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
@@ -302,6 +303,22 @@
 			name = tool;
 			sourceTree = "<group>";
 		};
+		3CFD98851EE01C8800583175 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				3CFD98861EE01C8F00583175 /* spine */,
+			);
+			name = ui;
+			sourceTree = "<group>";
+		};
+		3CFD98861EE01C8F00583175 /* spine */ = {
+			isa = PBXGroup;
+			children = (
+				3CFD98871EE01CA300583175 /* ZWSpine.h */,
+			);
+			name = spine;
+			sourceTree = "<group>";
+		};
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +335,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3CFD98851EE01C8800583175 /* ui */,
 				3C73E3E11ED96F830065028F /* battle */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,

@@ -1,7 +1,7 @@
 #include "HelloWorldScene.h"
 #include "GIDFactory.h"
+#include <spine/spine-cocos2dx.h>
 #include <string>
-
 USING_NS_CC;
 
 Scene* HelloWorld::createScene()
@@ -76,12 +76,17 @@ bool HelloWorld::init()
     this->addChild(sprite, 0);
     
     //image
-    auto sprite1 = Sprite::create("Hello.png");
+    auto sprite1 = Sprite::create("CRPVZ.jpg");
     sprite1->setPosition(Vec2(winSize.width/2, winSize.height/2));
     CCLOG("winsize.width:%.1f, winSize.height:%.1f", winSize.width, winSize.height);
     this->addChild(sprite1);
     
+    auto m_spine = spine::SkeletonAnimation::createWithFile("animation/spine/01/swordman.json", "animation/spine/01/swordman.atlas");
     
+    m_spine->setAnimation(0, "1_idle", true);
+    m_spine->setPosition(Vec2(200,200));
+    
+    this->addChild(m_spine, 1);
     return true;
 }
 
