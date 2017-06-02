@@ -1,0 +1,104 @@
+
+wandou.png
+size: 806,207
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+di01
+  rotate: true
+  xy: 492, 21
+  size: 98, 230
+  orig: 98, 230
+  offset: 0, 0
+  index: -1
+di02
+  rotate: false
+  xy: 492, 120
+  size: 243, 86
+  orig: 243, 86
+  offset: 0, 0
+  index: -1
+fan_banbi
+  rotate: false
+  xy: 179, 23
+  size: 36, 20
+  orig: 36, 20
+  offset: 0, 0
+  index: -1
+fan_banbi02
+  rotate: false
+  xy: 354, 29
+  size: 36, 20
+  orig: 36, 20
+  offset: 0, 0
+  index: -1
+fan_biyan
+  rotate: false
+  xy: 1, 9
+  size: 41, 34
+  orig: 41, 34
+  offset: 0, 0
+  index: -1
+fan_biyan02
+  rotate: false
+  xy: 43, 9
+  size: 41, 34
+  orig: 41, 34
+  offset: 0, 0
+  index: -1
+fan_tou
+  rotate: true
+  xy: 1, 44
+  size: 162, 244
+  orig: 162, 244
+  offset: 0, 0
+  index: -1
+fan_yezi
+  rotate: false
+  xy: 723, 3
+  size: 81, 116
+  orig: 81, 116
+  offset: 0, 0
+  index: -1
+z_banbi
+  rotate: false
+  xy: 85, 17
+  size: 46, 26
+  orig: 46, 26
+  offset: 0, 0
+  index: -1
+z_banbi02
+  rotate: false
+  xy: 132, 17
+  size: 46, 26
+  orig: 46, 26
+  offset: 0, 0
+  index: -1
+z_biyan
+  rotate: true
+  xy: 246, 1
+  size: 48, 53
+  orig: 48, 53
+  offset: 0, 0
+  index: -1
+z_biyan02
+  rotate: true
+  xy: 300, 1
+  size: 48, 53
+  orig: 48, 53
+  offset: 0, 0
+  index: -1
+z_tou
+  rotate: true
+  xy: 246, 50
+  size: 156, 245
+  orig: 156, 245
+  offset: 0, 0
+  index: -1
+z_yezi
+  rotate: false
+  xy: 736, 120
+  size: 69, 86
+  orig: 69, 86
+  offset: 0, 0
+  index: -1

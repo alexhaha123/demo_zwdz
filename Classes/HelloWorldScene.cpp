@@ -1,8 +1,11 @@
 #include "HelloWorldScene.h"
 #include "GIDFactory.h"
-#include <spine/spine-cocos2dx.h>
 #include <string>
 USING_NS_CC;
+
+HelloWorld::HelloWorld():ratation_y(0){
+    spine_act_map = {{1,"death"}, {2,"hit"},{3,"idle"},{4,"jump"},{5,"run"},{6,"shoot"},{7,"test"},{8,"walk"}};
+}
 
 Scene* HelloWorld::createScene()
 {
@@ -29,6 +32,7 @@ bool HelloWorld::init()
         return false;
     }
     
+    
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Size winSize = Director::getInstance()->getWinSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
@@ -45,9 +49,17 @@ bool HelloWorld::init()
     
 	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
                                 origin.y + closeItem->getContentSize().height/2));
+    
+    auto closeItem1 = MenuItemImage::create(
+                                           "CloseNormal.png",
+                                           "CloseSelected.png",
+                                           CC_CALLBACK_1(HelloWorld::menuCloseCallback1, this));
+    
+    closeItem1->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width * 1.5,
+                                origin.y + closeItem->getContentSize().height/2));
 
     // create menu, it's an autorelease object
-    auto menu = Menu::create(closeItem, NULL);
+    auto menu = Menu::create(closeItem,closeItem1,NULL);
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
@@ -81,15 +93,47 @@ bool HelloWorld::init()
     CCLOG("winsize.width:%.1f, winSize.height:%.1f", winSize.width, winSize.height);
     this->addChild(sprite1);
     
-    auto m_spine = spine::SkeletonAnimation::createWithFile("animation/spine/01/swordman.json", "animation/spine/01/swordman.atlas");
+    m_spine = spine::SkeletonAnimation::createWithFile("animation/spine/wandou/wandou.json", "animation/spine/wandou/wandou.atlas",0.35f);
+//    m_spine->setScale(0.4);
+//    m_spine->setDebugBonesEnabled(true);
+//    m_spine->setSkin("skin01");
+//    m_spine->setMix("walk", "jump", 0.2f);
+//    m_spine->setMix("jump", "run", 0.2f);
+    m_spine->setAnimation(0, "zheng_attack", true);
+    m_spine->setStartListener( [this] (int trackIndex) {
+        spTrackEntry* entry = spAnimationState_getCurrent(m_spine->getState(), trackIndex);
+        const char* animationName = (entry && entry->animation) ? entry->animation->name : 0;
+        log("%d start: %s", trackIndex, animationName);
+    });
+    m_spine->setEndListener( [] (int trackIndex) {
+        log("%d end", trackIndex);
+    });
+    m_spine->setCompleteListener( [] (int trackIndex, int loopCount) {
+        log("%d complete: %d", trackIndex, loopCount);
+    });
+    m_spine->setEventListener( [] (int trackIndex, spEvent* event) {
+        log("%d event: %s, %d, %f, %s", trackIndex, event->data->name, event->intValue, event->floatValue, event->stringValue);
+    });
+//    m_spine->addAnimation(0, "jump", false, 3);
+    m_spine->setPosition(Vec2(origin.x + visibleSize.width/2, origin.y + visibleSize.height/2));
     
-    m_spine->setAnimation(0, "1_idle", true);
-    m_spine->setPosition(Vec2(200,200));
+    this->addChild(m_spine, 100);
     
-    this->addChild(m_spine, 1);
     return true;
 }
 
+void HelloWorld::menuCloseCallback1(cocos2d::Ref* pSender){
+    std::map<int, std::string>::iterator ite = spine_act_map.find(++ratation_y);
+    if(ite != spine_act_map.end()){
+        std::string ret = ite->second;
+        m_spine->addAnimation(0, ret, false);
+    }else{
+        
+        for (auto& tm : spine_act_map) {
+            m_spine->addAnimation(0, tm.second, false);
+        }
+    }
+}
 
 void HelloWorld::menuCloseCallback(Ref* pSender)
 {

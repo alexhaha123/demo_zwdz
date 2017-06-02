@@ -1,0 +1,27 @@
+
+tudou.png
+size: 496,218
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+tudou_fan
+  rotate: true
+  xy: 1, 1
+  size: 216, 237
+  orig: 216, 237
+  offset: 0, 0
+  index: -1
+tudou_yanzhu
+  rotate: true
+  xy: 477, 110
+  size: 107, 18
+  orig: 107, 18
+  offset: 0, 0
+  index: -1
+tudou_zheng
+  rotate: true
+  xy: 239, 1
+  size: 216, 237
+  orig: 216, 237
+  offset: 0, 0
+  index: -1
