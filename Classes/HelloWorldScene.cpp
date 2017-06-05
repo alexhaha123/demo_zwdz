@@ -1,5 +1,6 @@
 #include "HelloWorldScene.h"
 #include "GIDFactory.h"
+#include "UIloader.h"
 #include <string>
 USING_NS_CC;
 
@@ -88,36 +89,10 @@ bool HelloWorld::init()
     this->addChild(sprite, 0);
     
     //image
-    auto sprite1 = Sprite::create("CRPVZ.jpg");
-    sprite1->setPosition(Vec2(winSize.width/2, winSize.height/2));
-    CCLOG("winsize.width:%.1f, winSize.height:%.1f", winSize.width, winSize.height);
-    this->addChild(sprite1);
-    
-    m_spine = spine::SkeletonAnimation::createWithFile("animation/spine/wandou/wandou.json", "animation/spine/wandou/wandou.atlas",0.35f);
-//    m_spine->setScale(0.4);
-//    m_spine->setDebugBonesEnabled(true);
-//    m_spine->setSkin("skin01");
-//    m_spine->setMix("walk", "jump", 0.2f);
-//    m_spine->setMix("jump", "run", 0.2f);
-    m_spine->setAnimation(0, "zheng_attack", true);
-    m_spine->setStartListener( [this] (int trackIndex) {
-        spTrackEntry* entry = spAnimationState_getCurrent(m_spine->getState(), trackIndex);
-        const char* animationName = (entry && entry->animation) ? entry->animation->name : 0;
-        log("%d start: %s", trackIndex, animationName);
-    });
-    m_spine->setEndListener( [] (int trackIndex) {
-        log("%d end", trackIndex);
-    });
-    m_spine->setCompleteListener( [] (int trackIndex, int loopCount) {
-        log("%d complete: %d", trackIndex, loopCount);
-    });
-    m_spine->setEventListener( [] (int trackIndex, spEvent* event) {
-        log("%d event: %s, %d, %f, %s", trackIndex, event->data->name, event->intValue, event->floatValue, event->stringValue);
-    });
-//    m_spine->addAnimation(0, "jump", false, 3);
-    m_spine->setPosition(Vec2(origin.x + visibleSize.width/2, origin.y + visibleSize.height/2));
-    
-    this->addChild(m_spine, 100);
+
+    Node* uimap =  UIloader::load("res/map/map01/map01.csb");
+    this->addChild(uimap);
+//    uimap->setPosition(Vec2(winSize.width/2, winSize.height/2));
     
     return true;
 }

@@ -57,6 +57,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::FIXED_WIDTH);
     
     FileUtils::getInstance()->addSearchPath("res/");
+    FileUtils::getInstance()->addSearchPath("res/map/");
 
     register_all_packages();
 
