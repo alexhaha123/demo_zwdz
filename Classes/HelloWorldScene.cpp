@@ -2,6 +2,8 @@
 #include "GIDFactory.h"
 #include "UIloader.h"
 #include <string>
+#include "BattleMap.h"
+
 USING_NS_CC;
 
 HelloWorld::HelloWorld():ratation_y(0){
@@ -88,26 +90,15 @@ bool HelloWorld::init()
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
     
-    //image
-
-    Node* uimap =  UIloader::load("res/map/map01/map01.csb");
-    this->addChild(uimap);
-//    uimap->setPosition(Vec2(winSize.width/2, winSize.height/2));
+    BattleMap* map = new BattleMap();
+    map->initSceneId(1);
+    this->addChild(map);
     
     return true;
 }
 
 void HelloWorld::menuCloseCallback1(cocos2d::Ref* pSender){
-    std::map<int, std::string>::iterator ite = spine_act_map.find(++ratation_y);
-    if(ite != spine_act_map.end()){
-        std::string ret = ite->second;
-        m_spine->addAnimation(0, ret, false);
-    }else{
-        
-        for (auto& tm : spine_act_map) {
-            m_spine->addAnimation(0, tm.second, false);
-        }
-    }
+
 }
 
 void HelloWorld::menuCloseCallback(Ref* pSender)

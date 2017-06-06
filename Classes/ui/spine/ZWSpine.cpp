@@ -5,6 +5,11 @@ ZWSpine::ZWSpine(const std::string& skeletonDataFile, const std::string& atlasFi
     
 }
 
+ZWSpine::~ZWSpine()
+{
+    
+}
+
 ZWSpine* ZWSpine::create(const std::string& filename, const std::string& atlasname, float scale){
     ZWSpine* node = new ZWSpine(filename, atlasname, scale);
     node->init();

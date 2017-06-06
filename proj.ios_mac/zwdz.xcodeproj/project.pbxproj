@@ -17,6 +17,8 @@
 		3CFD988E1EE50C3F00583175 /* UIloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD988C1EE50C3F00583175 /* UIloader.cpp */; };
 		3CFD98901EE5395300583175 /* ZWSpine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD988F1EE5395300583175 /* ZWSpine.cpp */; };
 		3CFD98911EE55A4000583175 /* UIloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD988C1EE50C3F00583175 /* UIloader.cpp */; };
+		3CFD98A71EE68E2100583175 /* MapTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD98A51EE68E2100583175 /* MapTile.cpp */; };
+		3CFD98AE1EE6B51500583175 /* BattleMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD98AC1EE6B51500583175 /* BattleMap.cpp */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
@@ -120,6 +122,11 @@
 		3CFD988C1EE50C3F00583175 /* UIloader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UIloader.cpp; path = ui/uiloader/UIloader.cpp; sourceTree = "<group>"; };
 		3CFD988D1EE50C3F00583175 /* UIloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIloader.h; path = ui/uiloader/UIloader.h; sourceTree = "<group>"; };
 		3CFD988F1EE5395300583175 /* ZWSpine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ZWSpine.cpp; path = ui/spine/ZWSpine.cpp; sourceTree = "<group>"; };
+		3CFD98A21EE660A200583175 /* battleDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = battleDefine.h; path = battle/battleDefine.h; sourceTree = "<group>"; };
+		3CFD98A51EE68E2100583175 /* MapTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MapTile.cpp; path = battle/unit/MapTile.cpp; sourceTree = "<group>"; };
+		3CFD98A61EE68E2100583175 /* MapTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapTile.h; path = battle/unit/MapTile.h; sourceTree = "<group>"; };
+		3CFD98AC1EE6B51500583175 /* BattleMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BattleMap.cpp; path = battle/battlemap/BattleMap.cpp; sourceTree = "<group>"; };
+		3CFD98AD1EE6B51500583175 /* BattleMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BattleMap.h; path = battle/battlemap/BattleMap.h; sourceTree = "<group>"; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		46880B7719C43A67006E1F66 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
@@ -295,7 +302,10 @@
 		3C73E3E11ED96F830065028F /* battle */ = {
 			isa = PBXGroup;
 			children = (
+				3CFD98A81EE68E2C00583175 /* battlemap */,
+				3CFD98A41EE68E0B00583175 /* unit */,
 				3C73E3E21ED96F8C0065028F /* tool */,
+				3CFD98A21EE660A200583175 /* battleDefine.h */,
 			);
 			name = battle;
 			sourceTree = "<group>";
@@ -334,6 +344,24 @@
 				3CFD988D1EE50C3F00583175 /* UIloader.h */,
 			);
 			name = uiloader;
+			sourceTree = "<group>";
+		};
+		3CFD98A41EE68E0B00583175 /* unit */ = {
+			isa = PBXGroup;
+			children = (
+				3CFD98A51EE68E2100583175 /* MapTile.cpp */,
+				3CFD98A61EE68E2100583175 /* MapTile.h */,
+			);
+			name = unit;
+			sourceTree = "<group>";
+		};
+		3CFD98A81EE68E2C00583175 /* battlemap */ = {
+			isa = PBXGroup;
+			children = (
+				3CFD98AC1EE6B51500583175 /* BattleMap.cpp */,
+				3CFD98AD1EE6B51500583175 /* BattleMap.h */,
+			);
+			name = battlemap;
 			sourceTree = "<group>";
 		};
 		46880B7519C43A67006E1F66 /* Resources */ = {
@@ -551,11 +579,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CFD98A71EE68E2100583175 /* MapTile.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				3C73E3E51ED96FA80065028F /* GIDFactory.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				3CFD988E1EE50C3F00583175 /* UIloader.cpp in Sources */,
 				3CFD98901EE5395300583175 /* ZWSpine.cpp in Sources */,
+				3CFD98AE1EE6B51500583175 /* BattleMap.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,

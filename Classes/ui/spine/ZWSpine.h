@@ -22,7 +22,7 @@ public:
     
     void play(const std::string& actionname, bool isLoop);
     
-    inline void setFinishEventListener(const spine::CompleteListener& completelistener){this->m_completelistener = completelistener;};
+    inline void setFinishEventListener(const spine::CompleteListener& completelistener){this->m_completelistener = completelistener;}
     
     void pause();
     
