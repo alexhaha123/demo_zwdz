@@ -19,6 +19,7 @@
 		3CFD98911EE55A4000583175 /* UIloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD988C1EE50C3F00583175 /* UIloader.cpp */; };
 		3CFD98A71EE68E2100583175 /* MapTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD98A51EE68E2100583175 /* MapTile.cpp */; };
 		3CFD98AE1EE6B51500583175 /* BattleMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD98AC1EE6B51500583175 /* BattleMap.cpp */; };
+		3CFD98B41EE803FF00583175 /* MapTouchLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD98B21EE803FF00583175 /* MapTouchLayer.cpp */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
@@ -127,6 +128,8 @@
 		3CFD98A61EE68E2100583175 /* MapTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapTile.h; path = battle/unit/MapTile.h; sourceTree = "<group>"; };
 		3CFD98AC1EE6B51500583175 /* BattleMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BattleMap.cpp; path = battle/battlemap/BattleMap.cpp; sourceTree = "<group>"; };
 		3CFD98AD1EE6B51500583175 /* BattleMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BattleMap.h; path = battle/battlemap/BattleMap.h; sourceTree = "<group>"; };
+		3CFD98B21EE803FF00583175 /* MapTouchLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MapTouchLayer.cpp; path = battle/battlemap/MapTouchLayer.cpp; sourceTree = "<group>"; };
+		3CFD98B31EE803FF00583175 /* MapTouchLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapTouchLayer.h; path = battle/battlemap/MapTouchLayer.h; sourceTree = "<group>"; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		46880B7719C43A67006E1F66 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
@@ -360,6 +363,8 @@
 			children = (
 				3CFD98AC1EE6B51500583175 /* BattleMap.cpp */,
 				3CFD98AD1EE6B51500583175 /* BattleMap.h */,
+				3CFD98B21EE803FF00583175 /* MapTouchLayer.cpp */,
+				3CFD98B31EE803FF00583175 /* MapTouchLayer.h */,
 			);
 			name = battlemap;
 			sourceTree = "<group>";
@@ -588,6 +593,7 @@
 				3CFD98AE1EE6B51500583175 /* BattleMap.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				3CFD98B41EE803FF00583175 /* MapTouchLayer.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -90,7 +90,7 @@ bool HelloWorld::init()
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
     
-    BattleMap* map = new BattleMap();
+    BattleMap* map =  BattleMap::create();
     map->initSceneId(1);
     this->addChild(map);
     

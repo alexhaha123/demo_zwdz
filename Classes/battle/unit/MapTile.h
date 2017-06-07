@@ -22,6 +22,8 @@ private:
     CC_SYNTHESIZE(MapTileDirection, dir, TileDirection);
     CC_SYNTHESIZE(ui::Widget*, m_mapTile, mapTile);
     CC_SYNTHESIZE(int, m_UnitGid, unitGid);
+    CC_SYNTHESIZE(Size, m_tileSize, TileSize);
+    CC_SYNTHESIZE(Rect, m_worldRect, WorldRect);
 };
 
 #endif /* MapTile_h */

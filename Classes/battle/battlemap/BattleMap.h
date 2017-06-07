@@ -19,6 +19,8 @@ public:
     BattleMap();
     ~BattleMap();
     
+    CREATE_FUNC(BattleMap);
+    
     virtual void onEnter();
     virtual void onExit();
     
@@ -34,6 +36,11 @@ public:
     void initMap();
     
     void updateUnit(float dt);
+    
+    virtual bool onTouchBegan(Touch *touch, Event *unused_event);
+    virtual void onTouchMoved(Touch *touch, Event *unused_event);
+    virtual void onTouchEnded(Touch *touch, Event *unused_event);
+    void test(EventCustom*);
     
 private:
     void parserMap(Node* root);
