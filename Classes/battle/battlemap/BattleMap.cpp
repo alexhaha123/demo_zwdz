@@ -84,17 +84,17 @@ void BattleMap::parserMap(Node* root)
 void BattleMap::start()
 {
     //test
-    for (std::vector<MapTile*>::iterator ite = vec_mapTile.begin(); ite != vec_mapTile.end(); ++ite) {
-        ZWSpine* sp = ZWSpine::create("animation/spine/wandou/wandou.json", "animation/spine/wandou/wandou.atlas", 0.25f);
-        auto dir = (*ite)->getTileDirection();
-        std::string actionname = "zheng_attack";
-        if(dir == MapTileDirection::Down){
-            actionname = "fan_attack";
-        }
-        sp->play(actionname, true);
-        sp->setPosition(Vec2((*ite)->getTileSize().width/2, (*ite)->getTileSize().height/2));
-        (*ite)->getmapTile()->addChild(sp);
-    }
+//    for (std::vector<MapTile*>::iterator ite = vec_mapTile.begin(); ite != vec_mapTile.end(); ++ite) {
+//        ZWSpine* sp = ZWSpine::create("animation/spine/wandou/wandou.json", "animation/spine/wandou/wandou.atlas", 0.25f);
+//        auto dir = (*ite)->getTileDirection();
+//        std::string actionname = "zheng_attack";
+//        if(dir == MapTileDirection::Down){
+//            actionname = "fan_attack";
+//        }
+//        sp->play(actionname, true);
+//        sp->setPosition(Vec2((*ite)->getTileSize().width/2, (*ite)->getTileSize().height/2));
+//        (*ite)->getmapTile()->addChild(sp);
+//    }
     
 }
 
@@ -121,7 +121,23 @@ void BattleMap::onTouchEnded(Touch *touch, Event *unused_event)
 
 void BattleMap::test(EventCustom* event)
 {
-    CCLOG("%s", event->getEventName().c_str());
+    Vec2* pos = (Vec2*)event->getUserData();
+    CCLOG("%s, pos = (%.2f, %.2f)", event->getEventName().c_str(), pos->x, pos->y);
+    for (auto tile : vec_mapTile) {
+        auto ret = tile->getWorldRect();
+        if (ret.containsPoint(Vec2(pos->x, pos->y))) {
+            CCLOG("rect(%.2f, %.2f, %.2f, %.2f)", ret.origin.x, ret.origin.y, ret.size.width, ret.size.height);
+            ZWSpine* sp = ZWSpine::create("animation/spine/wandou/wandou.json", "animation/spine/wandou/wandou.atlas", 0.25f);
+            auto dir = (tile)->getTileDirection();
+            std::string actionname = "zheng_attack";
+            if(dir == MapTileDirection::Down){
+                actionname = "fan_attack";
+            }
+            sp->play(actionname, true);
+            sp->setPosition(Vec2((tile)->getTileSize().width/2, (tile)->getTileSize().height/2));
+            (tile)->getmapTile()->addChild(sp);
+        }
+    }
 }
 
 void BattleMap::update(float dt)
