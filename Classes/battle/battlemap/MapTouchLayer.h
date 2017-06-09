@@ -23,7 +23,6 @@ public:
     virtual void onTouchMoved(Touch *touch, Event *unused_event);
     virtual void onTouchEnded(Touch *touch, Event *unused_event);
     
-    friend void BattleMap::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event);
 };
 
 #endif /* MapTouchLayer_h */

@@ -15,4 +15,14 @@ enum MapTileDirection{
     Down = 2
 };
 
+enum UnitGroup{
+    WE = 1,
+    ENERMY
+};
+
+enum UnitConfId{
+    WANDOU = 1,
+    JIANGUO = 2
+};
+
 #endif /* battleDefine_h */

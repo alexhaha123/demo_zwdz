@@ -20,6 +20,9 @@
 		3CFD98A71EE68E2100583175 /* MapTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD98A51EE68E2100583175 /* MapTile.cpp */; };
 		3CFD98AE1EE6B51500583175 /* BattleMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD98AC1EE6B51500583175 /* BattleMap.cpp */; };
 		3CFD98B41EE803FF00583175 /* MapTouchLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD98B21EE803FF00583175 /* MapTouchLayer.cpp */; };
+		3CFD98BA1EEA7E9600583175 /* BaseBattleUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD98B81EEA7E9600583175 /* BaseBattleUnit.cpp */; };
+		3CFD98BE1EEA91A600583175 /* UnitBaseData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD98BC1EEA91A600583175 /* UnitBaseData.cpp */; };
+		3CFD98C11EEA9D9700583175 /* FightPropData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD98BF1EEA9D9700583175 /* FightPropData.cpp */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
@@ -130,6 +133,12 @@
 		3CFD98AD1EE6B51500583175 /* BattleMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BattleMap.h; path = battle/battlemap/BattleMap.h; sourceTree = "<group>"; };
 		3CFD98B21EE803FF00583175 /* MapTouchLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MapTouchLayer.cpp; path = battle/battlemap/MapTouchLayer.cpp; sourceTree = "<group>"; };
 		3CFD98B31EE803FF00583175 /* MapTouchLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapTouchLayer.h; path = battle/battlemap/MapTouchLayer.h; sourceTree = "<group>"; };
+		3CFD98B81EEA7E9600583175 /* BaseBattleUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseBattleUnit.cpp; path = battle/unit/battleUnit/BaseBattleUnit.cpp; sourceTree = "<group>"; };
+		3CFD98B91EEA7E9600583175 /* BaseBattleUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseBattleUnit.h; path = battle/unit/battleUnit/BaseBattleUnit.h; sourceTree = "<group>"; };
+		3CFD98BC1EEA91A600583175 /* UnitBaseData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnitBaseData.cpp; path = battle/model/UnitBaseData.cpp; sourceTree = "<group>"; };
+		3CFD98BD1EEA91A600583175 /* UnitBaseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnitBaseData.h; path = battle/model/UnitBaseData.h; sourceTree = "<group>"; };
+		3CFD98BF1EEA9D9700583175 /* FightPropData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FightPropData.cpp; path = battle/model/FightPropData.cpp; sourceTree = "<group>"; };
+		3CFD98C01EEA9D9700583175 /* FightPropData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FightPropData.h; path = battle/model/FightPropData.h; sourceTree = "<group>"; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		46880B7719C43A67006E1F66 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
@@ -305,6 +314,7 @@
 		3C73E3E11ED96F830065028F /* battle */ = {
 			isa = PBXGroup;
 			children = (
+				3CFD98BB1EEA7F2700583175 /* model */,
 				3CFD98A81EE68E2C00583175 /* battlemap */,
 				3CFD98A41EE68E0B00583175 /* unit */,
 				3C73E3E21ED96F8C0065028F /* tool */,
@@ -352,6 +362,7 @@
 		3CFD98A41EE68E0B00583175 /* unit */ = {
 			isa = PBXGroup;
 			children = (
+				3CFD98B71EEA7E0D00583175 /* battleUnit */,
 				3CFD98A51EE68E2100583175 /* MapTile.cpp */,
 				3CFD98A61EE68E2100583175 /* MapTile.h */,
 			);
@@ -367,6 +378,26 @@
 				3CFD98B31EE803FF00583175 /* MapTouchLayer.h */,
 			);
 			name = battlemap;
+			sourceTree = "<group>";
+		};
+		3CFD98B71EEA7E0D00583175 /* battleUnit */ = {
+			isa = PBXGroup;
+			children = (
+				3CFD98B81EEA7E9600583175 /* BaseBattleUnit.cpp */,
+				3CFD98B91EEA7E9600583175 /* BaseBattleUnit.h */,
+			);
+			name = battleUnit;
+			sourceTree = "<group>";
+		};
+		3CFD98BB1EEA7F2700583175 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				3CFD98BC1EEA91A600583175 /* UnitBaseData.cpp */,
+				3CFD98BD1EEA91A600583175 /* UnitBaseData.h */,
+				3CFD98BF1EEA9D9700583175 /* FightPropData.cpp */,
+				3CFD98C01EEA9D9700583175 /* FightPropData.h */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		46880B7519C43A67006E1F66 /* Resources */ = {
@@ -489,11 +520,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
-				TargetAttributes = {
-					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = A7FRA3U9QK;
-					};
-				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "zwdz" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -592,6 +618,7 @@
 				3CFD98A71EE68E2100583175 /* MapTile.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				3C73E3E51ED96FA80065028F /* GIDFactory.cpp in Sources */,
+				3CFD98BE1EEA91A600583175 /* UnitBaseData.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				3CFD988E1EE50C3F00583175 /* UIloader.cpp in Sources */,
 				3CFD98901EE5395300583175 /* ZWSpine.cpp in Sources */,
@@ -599,6 +626,8 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				3CFD98B41EE803FF00583175 /* MapTouchLayer.cpp in Sources */,
+				3CFD98C11EEA9D9700583175 /* FightPropData.cpp in Sources */,
+				3CFD98BA1EEA7E9600583175 /* BaseBattleUnit.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,7 +666,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = A7FRA3U9QK;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -677,7 +706,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = A7FRA3U9QK;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

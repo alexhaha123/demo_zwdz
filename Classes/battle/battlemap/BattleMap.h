@@ -40,10 +40,14 @@ public:
     virtual bool onTouchBegan(Touch *touch, Event *unused_event);
     virtual void onTouchMoved(Touch *touch, Event *unused_event);
     virtual void onTouchEnded(Touch *touch, Event *unused_event);
-    void test(EventCustom*);
+    
+    
     
 private:
     void parserMap(Node* root);
+    
+    //拖拽检测
+    void addBattleUnitTest(EventCustom*);
 
 private:
     Node* m_battleMap;

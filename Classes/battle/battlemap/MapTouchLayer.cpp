@@ -28,15 +28,8 @@ void MapTouchLayer::onTouchMoved(Touch *touch, Event *unused_event)
 }
 void MapTouchLayer::onTouchEnded(Touch *touch, Event *unused_event)
 {
-//    Vec2 pos = Director::getInstance()->convertToGL(touch->getLocation());
-//    for (auto tile : vec_mapTile) {
-//        auto ret = tile->getWorldRect();
-//        if (ret.containsPoint(pos)) {
-//            CCLOG("rect(%.2f, %.2f, %.2f, %.2f)", ret.origin.x, ret.origin.y, ret.size.width, ret.size.height);
-//        }
-//    }
     Vec2 pos = touch->getLocation();
     CCLOG("(%.2f,%.2f)", pos.x, pos.y);
-    Director::getInstance()->getEventDispatcher()->dispatchCustomEvent("TEST", &pos);
+    Director::getInstance()->getEventDispatcher()->dispatchCustomEvent("DRAG_CARD_END_EVENT", &pos);
     
 }

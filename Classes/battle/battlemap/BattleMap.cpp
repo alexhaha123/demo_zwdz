@@ -28,7 +28,7 @@ BattleMap::~BattleMap()
 void BattleMap::onEnter()
 {
     auto dispatcher = Director::getInstance()->getEventDispatcher();
-    auto eventlistener = EventListenerCustom::create("TEST", CC_CALLBACK_1(BattleMap::test, this));
+    auto eventlistener = EventListenerCustom::create("DRAG_CARD_END_EVENT", CC_CALLBACK_1(BattleMap::addBattleUnitTest, this));
     dispatcher->addEventListenerWithSceneGraphPriority(eventlistener, this);
     
     Layer::onEnter();
@@ -83,18 +83,6 @@ void BattleMap::parserMap(Node* root)
 
 void BattleMap::start()
 {
-    //test
-//    for (std::vector<MapTile*>::iterator ite = vec_mapTile.begin(); ite != vec_mapTile.end(); ++ite) {
-//        ZWSpine* sp = ZWSpine::create("animation/spine/wandou/wandou.json", "animation/spine/wandou/wandou.atlas", 0.25f);
-//        auto dir = (*ite)->getTileDirection();
-//        std::string actionname = "zheng_attack";
-//        if(dir == MapTileDirection::Down){
-//            actionname = "fan_attack";
-//        }
-//        sp->play(actionname, true);
-//        sp->setPosition(Vec2((*ite)->getTileSize().width/2, (*ite)->getTileSize().height/2));
-//        (*ite)->getmapTile()->addChild(sp);
-//    }
     
 }
 
@@ -119,7 +107,7 @@ void BattleMap::onTouchEnded(Touch *touch, Event *unused_event)
     
 }
 
-void BattleMap::test(EventCustom* event)
+void BattleMap::addBattleUnitTest(EventCustom* event)
 {
     Vec2* pos = (Vec2*)event->getUserData();
     CCLOG("%s, pos = (%.2f, %.2f)", event->getEventName().c_str(), pos->x, pos->y);
