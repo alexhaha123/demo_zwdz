@@ -1,0 +1,9 @@
+{
+    "attack" : 0,
+    "defence" : 2,
+    "hp":20,
+    "res":"animation/spine/tudou/tudou",
+    "collideRectWidth":60,
+    "collideRectHeight":60
+    
+}

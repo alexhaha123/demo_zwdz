@@ -24,6 +24,7 @@ typedef std::map<int, int> FightPropMap;
 class FightPropData {
 public:
     FightPropData();
+    
     ~FightPropData();
     
     void setPropValue(FightProp key, int value);

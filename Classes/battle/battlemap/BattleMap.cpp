@@ -11,6 +11,10 @@
 #include "UIloader.h"
 #include "ZWSpine.h"
 #include "MapTouchLayer.h"
+#include "DataManager.h"
+#include "UnitManager.h"
+#include "GIDFactory.h"
+#include "BattleManager.h"
 
 BattleMap::BattleMap():m_battleMap(nullptr)
     ,m_sceneid(0)
@@ -83,28 +87,7 @@ void BattleMap::parserMap(Node* root)
 
 void BattleMap::start()
 {
-    
-}
-
-bool BattleMap::onTouchBegan(Touch *touch, Event *unused_event)
-{
-    CCLOG("ontouchbegin");
-    return true;
-}
-void BattleMap::onTouchMoved(Touch *touch, Event *unused_event)
-{
-    
-}
-void BattleMap::onTouchEnded(Touch *touch, Event *unused_event)
-{
-    Vec2 pos = Director::getInstance()->convertToGL(touch->getLocation());
-    for (auto tile : vec_mapTile) {
-        auto ret = tile->getWorldRect();
-        if (ret.containsPoint(pos)) {
-            CCLOG("rect(%.2f, %.2f, %.2f, %.2f)", ret.origin.x, ret.origin.y, ret.size.width, ret.size.height);
-        }
-    }
-    
+    Director::getInstance()->getScheduler()->schedule([&](float dt){this->update(dt);}, this, 1/30.0f, false,"BattleMapUpdate");
 }
 
 void BattleMap::addBattleUnitTest(EventCustom* event)
@@ -115,22 +98,52 @@ void BattleMap::addBattleUnitTest(EventCustom* event)
         auto ret = tile->getWorldRect();
         if (ret.containsPoint(Vec2(pos->x, pos->y))) {
             CCLOG("rect(%.2f, %.2f, %.2f, %.2f)", ret.origin.x, ret.origin.y, ret.size.width, ret.size.height);
-            ZWSpine* sp = ZWSpine::create("animation/spine/wandou/wandou.json", "animation/spine/wandou/wandou.atlas", 0.25f);
-            auto dir = (tile)->getTileDirection();
-            std::string actionname = "zheng_attack";
-            if(dir == MapTileDirection::Down){
-                actionname = "fan_attack";
+            BaseBattleUnit* unit = nullptr;
+            
+            if (tile->getTileDirection() == MapTileDirection::UP)
+            {
+                unit = createEnemyByType(UnitConfId::WANDOU);
+            }else
+            {
+                unit = createFriendByType(UnitConfId::WANDOU);
             }
-            sp->play(actionname, true);
-            sp->setPosition(Vec2((tile)->getTileSize().width/2, (tile)->getTileSize().height/2));
-            (tile)->getmapTile()->addChild(sp);
+            
+            unit->setPosition(Vec2((tile)->getTileSize().width/2, (tile)->getTileSize().height/2));
+
+            unit->addToLand(tile->getmapTile());
         }
     }
 }
 
+BaseBattleUnit* BattleMap::createEnemyByType(int type)
+{
+    int  gid = GIDFactory::getInstance()->getNextGid();
+    CCLOG("gid = %d", gid);
+    UnitBaseData* unit_data = DataManager::getInstance()->createMonster(gid, type);
+    unit_data->m_UnitType = UnitGroup::ENERMY;
+    
+    BaseBattleUnit* unit = BattleManager::getInstance()->createEnemySprite(gid);
+    unit->playAction(AnimationName::ANI_NAME_ATTACK_ENEMY);
+    
+    return unit;
+}
+
+BaseBattleUnit* BattleMap::createFriendByType(int type)
+{
+    int gid = GIDFactory::getInstance()->getNextGid();
+    CCLOG("gid = %d", gid);
+    UnitBaseData* unit_data = DataManager::getInstance()->createFriend(gid, type);
+    unit_data->m_UnitType = UnitGroup::WE;
+    
+    BaseBattleUnit* unit = BattleManager::getInstance()->createFriendSprite(gid);
+    unit->playAction(AnimationName::ANI_NAME_ATTACK);
+    
+    return unit;
+}
+
 void BattleMap::update(float dt)
 {
-    
+    UnitManager::getInstance()->update(dt);
 }
 
 void BattleMap::finish()

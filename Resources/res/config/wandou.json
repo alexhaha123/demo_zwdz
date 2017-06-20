@@ -1,0 +1,16 @@
+{
+	"attack" : 1,
+	"defence" : 1,
+    "hp":10,
+    "res":"animation/spine/wandou/wandou",
+    "collideRectWidth":60,
+    "collideRectHeight":60,
+    "actionName_1":"fan_stand",
+    "actionName_2":"fan_attack",
+    "actionName_3":"",
+    "actionName_4":"fan_death",
+    "actionName_5":"zheng_stand",
+    "actionName_6":"zheng_attack",
+    "actionName_7":"",
+    "actionName_8":"zheng_death"
+}

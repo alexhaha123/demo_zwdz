@@ -58,6 +58,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     
     FileUtils::getInstance()->addSearchPath("res/");
     FileUtils::getInstance()->addSearchPath("res/map/");
+    FileUtils::getInstance()->addSearchPath("res/config/");
 
     register_all_packages();
 

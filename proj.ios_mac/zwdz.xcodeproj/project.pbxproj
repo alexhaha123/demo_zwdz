@@ -12,6 +12,15 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		3C506F9D1EEC0013009996B9 /* JsonReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C506F9B1EEC0013009996B9 /* JsonReader.cpp */; };
+		3C506FA41EEE7717009996B9 /* MonsterData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C506FA21EEE7717009996B9 /* MonsterData.cpp */; };
+		3C506FA71EEE7CAC009996B9 /* ToolFunction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C506FA51EEE7CAC009996B9 /* ToolFunction.cpp */; };
+		3C506FAA1EEE903F009996B9 /* DataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C506FA81EEE903F009996B9 /* DataManager.cpp */; };
+		3C506FAD1EEED840009996B9 /* MapObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C506FAB1EEED840009996B9 /* MapObject.cpp */; };
+		3C506FB11EF1122A009996B9 /* UnitManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C506FAF1EF1122A009996B9 /* UnitManager.cpp */; };
+		3C506FB51EF25F22009996B9 /* BattleManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C506FB31EF25F22009996B9 /* BattleManager.cpp */; };
+		3C506FB81EF66B21009996B9 /* BulletData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C506FB61EF66B21009996B9 /* BulletData.cpp */; };
+		3C506FBB1EF675EC009996B9 /* BulletSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C506FB91EF675EC009996B9 /* BulletSprite.cpp */; };
 		3C73E3E51ED96FA80065028F /* GIDFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C73E3E31ED96FA80065028F /* GIDFactory.cpp */; };
 		3C73E3E61ED979DF0065028F /* GIDFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C73E3E31ED96FA80065028F /* GIDFactory.cpp */; };
 		3CFD988E1EE50C3F00583175 /* UIloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CFD988C1EE50C3F00583175 /* UIloader.cpp */; };
@@ -120,6 +129,24 @@
 		1D6058910D05DD3D006BFB54 /* zwdz-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "zwdz-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3C506F9B1EEC0013009996B9 /* JsonReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = JsonReader.cpp; path = util/JsonReader.cpp; sourceTree = "<group>"; };
+		3C506F9C1EEC0013009996B9 /* JsonReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JsonReader.h; path = util/JsonReader.h; sourceTree = "<group>"; };
+		3C506FA21EEE7717009996B9 /* MonsterData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MonsterData.cpp; path = battle/model/MonsterData.cpp; sourceTree = "<group>"; };
+		3C506FA31EEE7717009996B9 /* MonsterData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MonsterData.h; path = battle/model/MonsterData.h; sourceTree = "<group>"; };
+		3C506FA51EEE7CAC009996B9 /* ToolFunction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ToolFunction.cpp; path = util/ToolFunction.cpp; sourceTree = "<group>"; };
+		3C506FA61EEE7CAC009996B9 /* ToolFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToolFunction.h; path = util/ToolFunction.h; sourceTree = "<group>"; };
+		3C506FA81EEE903F009996B9 /* DataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DataManager.cpp; path = battle/model/DataManager.cpp; sourceTree = "<group>"; };
+		3C506FA91EEE903F009996B9 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = battle/model/DataManager.h; sourceTree = "<group>"; };
+		3C506FAB1EEED840009996B9 /* MapObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MapObject.cpp; path = battle/unit/battleUnit/MapObject.cpp; sourceTree = "<group>"; };
+		3C506FAC1EEED840009996B9 /* MapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapObject.h; path = battle/unit/battleUnit/MapObject.h; sourceTree = "<group>"; };
+		3C506FAF1EF1122A009996B9 /* UnitManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnitManager.cpp; path = battle/unit/battleUnit/UnitManager.cpp; sourceTree = "<group>"; };
+		3C506FB01EF1122A009996B9 /* UnitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnitManager.h; path = battle/unit/battleUnit/UnitManager.h; sourceTree = "<group>"; };
+		3C506FB31EF25F22009996B9 /* BattleManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BattleManager.cpp; path = manager/BattleManager.cpp; sourceTree = "<group>"; };
+		3C506FB41EF25F22009996B9 /* BattleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BattleManager.h; path = manager/BattleManager.h; sourceTree = "<group>"; };
+		3C506FB61EF66B21009996B9 /* BulletData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BulletData.cpp; path = battle/model/BulletData.cpp; sourceTree = "<group>"; };
+		3C506FB71EF66B21009996B9 /* BulletData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BulletData.h; path = battle/model/BulletData.h; sourceTree = "<group>"; };
+		3C506FB91EF675EC009996B9 /* BulletSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BulletSprite.cpp; path = battle/unit/battleUnit/BulletSprite.cpp; sourceTree = "<group>"; };
+		3C506FBA1EF675EC009996B9 /* BulletSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BulletSprite.h; path = battle/unit/battleUnit/BulletSprite.h; sourceTree = "<group>"; };
 		3C73E3E31ED96FA80065028F /* GIDFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GIDFactory.cpp; path = battle/tool/GIDFactory.cpp; sourceTree = "<group>"; };
 		3C73E3E41ED96FA80065028F /* GIDFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GIDFactory.h; path = battle/tool/GIDFactory.h; sourceTree = "<group>"; };
 		3CFD98871EE01CA300583175 /* ZWSpine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZWSpine.h; path = ui/spine/ZWSpine.h; sourceTree = "<group>"; };
@@ -311,9 +338,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3C506F971EEBFEE8009996B9 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				3C506F9B1EEC0013009996B9 /* JsonReader.cpp */,
+				3C506F9C1EEC0013009996B9 /* JsonReader.h */,
+				3C506FA51EEE7CAC009996B9 /* ToolFunction.cpp */,
+				3C506FA61EEE7CAC009996B9 /* ToolFunction.h */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		3C506FB21EF25EF4009996B9 /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				3C506FB31EF25F22009996B9 /* BattleManager.cpp */,
+				3C506FB41EF25F22009996B9 /* BattleManager.h */,
+			);
+			name = manager;
+			sourceTree = "<group>";
+		};
 		3C73E3E11ED96F830065028F /* battle */ = {
 			isa = PBXGroup;
 			children = (
+				3C506FB21EF25EF4009996B9 /* manager */,
 				3CFD98BB1EEA7F2700583175 /* model */,
 				3CFD98A81EE68E2C00583175 /* battlemap */,
 				3CFD98A41EE68E0B00583175 /* unit */,
@@ -385,6 +433,12 @@
 			children = (
 				3CFD98B81EEA7E9600583175 /* BaseBattleUnit.cpp */,
 				3CFD98B91EEA7E9600583175 /* BaseBattleUnit.h */,
+				3C506FAB1EEED840009996B9 /* MapObject.cpp */,
+				3C506FAC1EEED840009996B9 /* MapObject.h */,
+				3C506FAF1EF1122A009996B9 /* UnitManager.cpp */,
+				3C506FB01EF1122A009996B9 /* UnitManager.h */,
+				3C506FB91EF675EC009996B9 /* BulletSprite.cpp */,
+				3C506FBA1EF675EC009996B9 /* BulletSprite.h */,
 			);
 			name = battleUnit;
 			sourceTree = "<group>";
@@ -396,6 +450,12 @@
 				3CFD98BD1EEA91A600583175 /* UnitBaseData.h */,
 				3CFD98BF1EEA9D9700583175 /* FightPropData.cpp */,
 				3CFD98C01EEA9D9700583175 /* FightPropData.h */,
+				3C506FA21EEE7717009996B9 /* MonsterData.cpp */,
+				3C506FA31EEE7717009996B9 /* MonsterData.h */,
+				3C506FA81EEE903F009996B9 /* DataManager.cpp */,
+				3C506FA91EEE903F009996B9 /* DataManager.h */,
+				3C506FB61EF66B21009996B9 /* BulletData.cpp */,
+				3C506FB71EF66B21009996B9 /* BulletData.h */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -416,6 +476,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3C506F971EEBFEE8009996B9 /* util */,
 				3CFD98851EE01C8800583175 /* ui */,
 				3C73E3E11ED96F830065028F /* battle */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
@@ -616,19 +677,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CFD98A71EE68E2100583175 /* MapTile.cpp in Sources */,
+				3C506FAA1EEE903F009996B9 /* DataManager.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				3C506FB51EF25F22009996B9 /* BattleManager.cpp in Sources */,
+				3C506FAD1EEED840009996B9 /* MapObject.cpp in Sources */,
+				3C506FA41EEE7717009996B9 /* MonsterData.cpp in Sources */,
 				3C73E3E51ED96FA80065028F /* GIDFactory.cpp in Sources */,
 				3CFD98BE1EEA91A600583175 /* UnitBaseData.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				3CFD988E1EE50C3F00583175 /* UIloader.cpp in Sources */,
 				3CFD98901EE5395300583175 /* ZWSpine.cpp in Sources */,
+				3C506FB81EF66B21009996B9 /* BulletData.cpp in Sources */,
 				3CFD98AE1EE6B51500583175 /* BattleMap.cpp in Sources */,
+				3C506FB11EF1122A009996B9 /* UnitManager.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				3CFD98B41EE803FF00583175 /* MapTouchLayer.cpp in Sources */,
 				3CFD98C11EEA9D9700583175 /* FightPropData.cpp in Sources */,
+				3C506FBB1EF675EC009996B9 /* BulletSprite.cpp in Sources */,
 				3CFD98BA1EEA7E9600583175 /* BaseBattleUnit.cpp in Sources */,
+				3C506FA71EEE7CAC009996B9 /* ToolFunction.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				3C506F9D1EEC0013009996B9 /* JsonReader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

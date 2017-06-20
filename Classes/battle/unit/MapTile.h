@@ -17,7 +17,7 @@ class MapTile{
 public:
     MapTile(ui::Widget* mapTile);
     
-    
+    bool isTileNull();
 private:
     CC_SYNTHESIZE(MapTileDirection, dir, TileDirection);
     CC_SYNTHESIZE(ui::Widget*, m_mapTile, mapTile);

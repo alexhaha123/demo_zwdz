@@ -3,6 +3,8 @@
 #include "UIloader.h"
 #include <string>
 #include "BattleMap.h"
+#include "JsonReader.h"
+#include "DataManager.h"
 
 USING_NS_CC;
 
@@ -94,6 +96,11 @@ bool HelloWorld::init()
     map->initSceneId(1);
     this->addChild(map);
     
+
+    DataManager::getInstance()->createMonster(1000, 1);
+    UnitBaseData* data = DataManager::getInstance()->getBattleUnitData(1000);
+    std::string ret =data->getAniNameByActId(AnimationName::ANI_NAME_ATTACK);
+    CCLOG("attack:%s", ret.c_str());
     return true;
 }
 

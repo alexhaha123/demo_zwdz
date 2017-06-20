@@ -13,6 +13,8 @@
 #include <vector>
 USING_NS_CC;
 
+class BaseBattleUnit;
+
 class BattleMap : public Layer
 {
 public:
@@ -37,12 +39,9 @@ public:
     
     void updateUnit(float dt);
     
-    virtual bool onTouchBegan(Touch *touch, Event *unused_event);
-    virtual void onTouchMoved(Touch *touch, Event *unused_event);
-    virtual void onTouchEnded(Touch *touch, Event *unused_event);
+    BaseBattleUnit* createEnemyByType(int type);
     
-    
-    
+    BaseBattleUnit* createFriendByType(int type);
 private:
     void parserMap(Node* root);
     

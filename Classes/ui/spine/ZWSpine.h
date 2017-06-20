@@ -20,7 +20,7 @@ public:
     
     bool init();
     
-    void play(const std::string& actionname, bool isLoop);
+    void play(const std::string& actionname, bool isLoop = -1);
     
     inline void setFinishEventListener(const spine::CompleteListener& completelistener){this->m_completelistener = completelistener;}
     
