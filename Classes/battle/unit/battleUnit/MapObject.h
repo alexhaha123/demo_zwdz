@@ -35,6 +35,8 @@ public:
     //collide about interface
     const Rect& getCollideRect() {return  this->m_oCollideRect;}
     
+    const Rect getWorldCollideRect();
+    
     virtual void setCollideRect(float x, float y, float width, float height);
     
     void setLogicAnchorPoint(float x, float y);

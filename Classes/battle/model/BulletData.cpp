@@ -9,10 +9,11 @@
 #include "BulletData.h"
 #include "JsonReader.h"
 #include "ToolFunction.h"
+#include "battleDefine.h"
 
 BulletData::BulletData()
 {
-    
+    this->m_UnitType = KObjType::KObjFlyObj;
 }
 
 BulletData::~BulletData()

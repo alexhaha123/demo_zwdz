@@ -1,6 +1,6 @@
 {
 	"attack" : 1,
-	"defence" : 1,
+	"defence" : 0,
     "hp":10,
     "res":"animation/spine/wandou/wandou",
     "collideRectWidth":60,

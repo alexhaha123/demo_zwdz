@@ -33,6 +33,7 @@ public:
     int m_Gid;
     int m_configId;
     int m_UnitType;
+    int m_unitGroup;
     std::string res_name;
     Rect m_collideRect;
     Vec2 m_speed;

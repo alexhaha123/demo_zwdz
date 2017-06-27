@@ -10,6 +10,8 @@
 #define UnitManager_h
 
 #include "BaseBattleUnit.h"
+#include "BulletSprite.h"
+
 typedef std::map<int, BaseBattleUnit*> BattleUnitMap;
 typedef std::map<int, BaseBattleUnit*> BulletUnitMap;
 
@@ -29,6 +31,8 @@ public:
     BaseBattleUnit* getFriend(int gid);
     
     BaseBattleUnit* getBattleUnitSprite(int gid);
+    BattleUnitMap getAllFriendUnits() {return m_UnitFriendsMap;}
+    BattleUnitMap getAllEnemyUnits() {return m_UnitEnemyMap;}
     
     void removeUnit(int gid);
     

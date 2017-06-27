@@ -90,6 +90,16 @@ void MapObject::setCollideRect(float x, float y, float width, float height)
     this->setPositionWithoutAdjust(x, y);
 }
 
+const Rect MapObject::getWorldCollideRect()
+{
+    Vec2 worldRectOrigin = Vec2::ZERO;
+    if (this->getParent()) {
+        worldRectOrigin = this->getParent()->convertToWorldSpace(this->m_oCollideRect.origin);
+    }
+    
+    return Rect(worldRectOrigin.x, worldRectOrigin.y, this->m_oCollideRect.size.width, this->m_oCollideRect.size.height);
+}
+
 void MapObject::setLogicAnchorPoint(float x, float y)
 {
     this->m_oLogicAnchorPoint = Vec2(x, y);

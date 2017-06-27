@@ -105,7 +105,7 @@ BaseBattleUnit* UnitManager::createBullet(UnitBaseData* unitData)
             pRet = ite->second;
         }else
         {
-            BaseBattleUnit* bullet = new BaseBattleUnit();
+            BaseBattleUnit* bullet = new BulletSprite();
             CC_SAFE_RETAIN(bullet);
             
             bullet->initData(unitData);

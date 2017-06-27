@@ -120,7 +120,7 @@ BaseBattleUnit* BattleMap::createEnemyByType(int type)
     int  gid = GIDFactory::getInstance()->getNextGid();
     CCLOG("gid = %d", gid);
     UnitBaseData* unit_data = DataManager::getInstance()->createMonster(gid, type);
-    unit_data->m_UnitType = UnitGroup::ENERMY;
+    unit_data->m_unitGroup = UnitGroup::ENERMY;
     
     BaseBattleUnit* unit = BattleManager::getInstance()->createEnemySprite(gid);
     unit->playAction(AnimationName::ANI_NAME_ATTACK_ENEMY);
@@ -133,7 +133,7 @@ BaseBattleUnit* BattleMap::createFriendByType(int type)
     int gid = GIDFactory::getInstance()->getNextGid();
     CCLOG("gid = %d", gid);
     UnitBaseData* unit_data = DataManager::getInstance()->createFriend(gid, type);
-    unit_data->m_UnitType = UnitGroup::WE;
+    unit_data->m_unitGroup = UnitGroup::WE;
     
     BaseBattleUnit* unit = BattleManager::getInstance()->createFriendSprite(gid);
     unit->playAction(AnimationName::ANI_NAME_ATTACK);

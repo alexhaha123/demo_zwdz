@@ -40,7 +40,11 @@ public:
     
     bool isInScreen();
     
-    void collideTest();
+    void collideTest(float dt);
+    
+    void collideLogic(Rect collideRect, std::map<int, BaseBattleUnit*>);
+    
+    void testDeath(float dt);
 private:
     CC_SYNTHESIZE(ZWSpine*, m_animationSpine, AnimationSpine);
     CC_SYNTHESIZE(UnitBaseData*, m_unitBaseData, UnitBaseData);
